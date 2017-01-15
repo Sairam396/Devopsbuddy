@@ -1,0 +1,11 @@
+2017-01-15 10:30:56,457 [Worker-9] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.devopsbuddy:devopsbuddy:0.0.1-SNAPSHOT @ /Users/rjeshg/Documents/Workspaces/Spring-sts/devopsbuddy/pom.xml.
+2017-01-15 10:30:57,704 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /devopsbuddy/src/main/java
+2017-01-15 10:30:57,705 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /devopsbuddy/src/main/resources
+2017-01-15 10:30:57,706 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /devopsbuddy/src/main/resources
+2017-01-15 10:30:57,707 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /devopsbuddy/src/test/java
+2017-01-15 10:30:57,820 [Worker-9] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 8 sec
+2017-01-15 10:31:00,049 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-15 10:31:00,053 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-15 10:31:00,063 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-15 10:31:00,067 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-15 10:31:00,067 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rjeshg/Documents/Workspaces/Spring-sts/devopsbuddy/src/test/resources
