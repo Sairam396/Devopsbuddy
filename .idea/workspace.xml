@@ -154,8 +154,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
-    <option name="y" value="23" />
+    <option name="x" value="230" />
+    <option name="y" value="35" />
     <option name="width" value="1404" />
     <option name="height" value="767" />
   </component>
@@ -938,7 +938,7 @@
       <workItem from="1484546455247" duration="1554000" />
       <workItem from="1484588768214" duration="678000" />
       <workItem from="1484589521792" duration="2040000" />
-      <workItem from="1484591598962" duration="3358000" />
+      <workItem from="1484591598962" duration="3476000" />
     </task>
     <task id="LOCAL-00001" summary="Added .gitignore file">
       <created>1484513651727</created>
@@ -965,10 +965,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19350000" />
+    <option name="totallyTimeSpent" value="19468000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="23" width="1404" height="767" extended-state="0" />
+    <frame x="230" y="35" width="1404" height="767" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
