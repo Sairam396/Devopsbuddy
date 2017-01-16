@@ -1,27 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<<<<<<< HEAD
-<head>
-
-    <title>Devops Buddy</title>
-
-    <!-- Bootstrap core CSS -->
-    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
-          rel="stylesheet"  media="screen"/>
-
-    <!-- Custom styles for this template -->
-    <link type="text/css" th:href="@{/css/styles.css}" rel="stylesheet" media="screen" />
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-=======
 
 <head th:replace="common/header :: common-header" />
->>>>>>> index
 
 <body>
 
@@ -30,7 +10,7 @@
   <div class="container">
 
     <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
+        <h1 th:text="#{index.main.callout}">Enter main callout here</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br /> All you get is this text and a
             mostly barebones HTML document.</p>
     </div>
@@ -40,12 +20,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<<<<<<< HEAD
-<script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
-=======
   <div th:replace="common/header :: before-body-scripts" ></div>
 
->>>>>>> index
 </body>
 </html>
