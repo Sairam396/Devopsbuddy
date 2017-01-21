@@ -1,21 +1,19 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
 
 import org.hibernate.validator.constraints.Length;
-import org.springframework.security.access.method.P;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by rjeshg on 1/19/17.
- */
+
 @Entity
 public class User implements Serializable {
 
     /** The Serial Version UID for Serializable classes. */
     private static final long serialVersionUID = 1L;
+
 
     public User() {
 
@@ -27,9 +25,9 @@ public class User implements Serializable {
 
     private String username;
 
-    private String email;
-
     private String password;
+
+    private String email;
 
     @Column(name = "first_name")
     private String firstName;
@@ -43,7 +41,7 @@ public class User implements Serializable {
     @Length(max = 500)
     private String description;
 
-    private  String country;
+    private String country;
 
     @Column(name = "profile_image_url")
     private String profileImageUrl;
@@ -51,13 +49,12 @@ public class User implements Serializable {
     @Column(name = "stripe_customer_id")
     private String stripeCustomerId;
 
-
     private boolean enabled;
-
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "plan_id")
     private Plan plan;
+
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -85,14 +82,6 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getFirstName() {
@@ -159,6 +148,14 @@ public class User implements Serializable {
         this.enabled = enabled;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Plan getPlan() {
         return plan;
     }
@@ -167,7 +164,6 @@ public class User implements Serializable {
         this.plan = plan;
     }
 
-
     public Set<UserRole> getUserRoles() {
         return userRoles;
     }
@@ -175,6 +171,8 @@ public class User implements Serializable {
     public void setUserRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -191,4 +189,6 @@ public class User implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+
+
 }

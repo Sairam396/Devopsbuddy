@@ -1,12 +1,12 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-/**
- * Created by rjeshg on 1/19/17.
- */
+
 @Entity
 public class Plan implements Serializable {
 
@@ -18,11 +18,11 @@ public class Plan implements Serializable {
 
     private String name;
 
-
-    /** Default Constructor. */
+    /** Default constructor. */
     public Plan() {
 
     }
+
 
     public int getId() {
         return id;
@@ -48,11 +48,11 @@ public class Plan implements Serializable {
         Plan plan = (Plan) o;
 
         return id == plan.id;
+
     }
 
     @Override
     public int hashCode() {
-
         return id;
     }
 }

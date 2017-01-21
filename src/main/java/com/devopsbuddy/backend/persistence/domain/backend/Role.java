@@ -1,13 +1,12 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by rjeshg on 1/19/17.
- */
+
 @Entity
 public class Role implements Serializable {
 
@@ -58,6 +57,7 @@ public class Role implements Serializable {
         Role role = (Role) o;
 
         return id == role.id;
+
     }
 
     @Override
