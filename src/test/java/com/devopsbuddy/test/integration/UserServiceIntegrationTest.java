@@ -25,10 +25,7 @@ package com.devopsbuddy.test.integration;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(DevopsbuddyApplication.class)
-public class UserServiceIntegrationTest {
-
-    @Autowired
-    private UserService userService;
+public class UserServiceIntegrationTest  extends AbstractServiceIntegrationTest {
 
 
     @Rule public TestName testName = new TestName();
@@ -36,16 +33,10 @@ public class UserServiceIntegrationTest {
     @Test
     public void testCreateNewUser() throws Exception {
 
-        String username = testName.getMethodName();
-        String email = testName.getMethodName() + "@devopsbuddy.com";
-
-        Set<UserRole> userRoles = new HashSet<>();
-        User basicUser = UserUtils.createBasicUser(username, email);
-        userRoles.add(new UserRole(basicUser, new Role(RolesEnum.BASIC)));
-
-        User user = userService.createUser(basicUser, PlansEnum.BASIC, userRoles);
+        User user = createUser(testName);
         Assert.assertNotNull(user);
         Assert.assertNotNull(user.getId());
 
     }
+
 }
