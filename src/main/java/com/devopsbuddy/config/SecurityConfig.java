@@ -1,5 +1,6 @@
 package com.devopsbuddy.config;
 
+import com.devopsbuddy.backend.service.UserSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -12,11 +13,14 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by rjeshg on 01/20/2017.
+ * Created by rjeshg on 1/21/2017.
  */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserSecurityService userSecurityService;
 
     @Autowired
     private Environment env;
@@ -57,8 +61,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .inMemoryAuthentication()
-                .withUser("user").password("password")
-                .roles("USER");
+                .userDetailsService(userSecurityService);
     }
 }
