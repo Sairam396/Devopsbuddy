@@ -64,4 +64,6 @@ public abstract class AbstractIntegrationTest {
         return createUser(testName.getMethodName(), testName.getMethodName() + "@devopsbuddy.com");
     }
 
+
+
 }
