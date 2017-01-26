@@ -3,7 +3,7 @@ package com.devopsbuddy.backend.persistence.domain.backend;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * Created by rjeshg on 1/21/17.
+ * Created by tedonema on 31/03/2016.
  */
 public class Authority implements GrantedAuthority {
 

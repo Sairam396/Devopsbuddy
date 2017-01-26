@@ -1,27 +1,28 @@
 package com.devopsbuddy.enums;
 
 /**
- * Created by rjeshg on 1/20/17.
+ * Created by tedonema on 30/03/2016.
  */
 public enum PlansEnum {
 
     BASIC(1, "Basic"),
     PRO(2, "Pro");
 
+
     private final int id;
 
-    private final String name;
+    private final String planName;
 
-    PlansEnum(int id, String name) {
+    PlansEnum(int id, String planName) {
         this.id = id;
-        this.name = name;
+        this.planName = planName;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getPlanName() {
+        return planName;
     }
 }

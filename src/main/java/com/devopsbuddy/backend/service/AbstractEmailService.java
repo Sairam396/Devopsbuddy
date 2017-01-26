@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 
 /**
- * Created by rjeshg on 1/18/17.
+ * Created by tedonema on 22/03/2016.
  */
 public abstract class AbstractEmailService implements EmailService {
 

@@ -7,7 +7,7 @@ import com.devopsbuddy.web.domain.frontend.BasicAccountPayload;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by rjeshg on 01/21/2017.
+ * Created by tedonema on 30/03/2016.
  */
 public class UserUtils {
 
@@ -41,6 +41,13 @@ public class UserUtils {
         return user;
     }
 
+    /**
+     * Builds and returns the URL to reset the user password.
+     * @param request The Http Servlet Request
+     * @param userId The user id
+     * @param token The token
+     * @return the URL to reset the user password.
+     */
     public static String createPasswordResetUrl(HttpServletRequest request, long userId, String token) {
         String passwordResetUrl =
                 request.getScheme() +
@@ -55,12 +62,10 @@ public class UserUtils {
                         "&token=" +
                         token;
 
-              return passwordResetUrl;
-
+        return passwordResetUrl;
     }
 
     public static <T extends BasicAccountPayload> User fromWebUserToDomainUser(T frontendPayload) {
-
         User user = new User();
         user.setUsername(frontendPayload.getUsername());
         user.setPassword(frontendPayload.getPassword());
