@@ -2,7 +2,7 @@ package com.devopsbuddy.enums;
 
 /**
  * Defines the possible roles.
- * Created by rjeshg on 1/20/17.
+ * Created by tedonema on 30/03/2016.
  */
 public enum RolesEnum {
 

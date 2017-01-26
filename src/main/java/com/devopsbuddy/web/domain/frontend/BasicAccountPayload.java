@@ -1,15 +1,20 @@
 package com.devopsbuddy.web.domain.frontend;
 
+/**
+ * Created by tedonema on 23/04/2016.
+ */
+
 import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * Created by rjeshg on 1/25/17.
+ * Contains basic account information that users have filled in the signup form.
+ *
+ * Created by tedonema on 23/04/2016.
  */
 public class BasicAccountPayload implements Serializable {
-
 
     /** The Serial Version UID for Serializable classes. */
     private static final long serialVersionUID = 1L;
@@ -121,12 +126,12 @@ public class BasicAccountPayload implements Serializable {
         BasicAccountPayload that = (BasicAccountPayload) o;
 
         return username != null ? username.equals(that.username) : that.username == null;
+
     }
 
     @Override
     public int hashCode() {
         return username != null ? username.hashCode() : 0;
-
     }
 
     @Override

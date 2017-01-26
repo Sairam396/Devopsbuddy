@@ -4,17 +4,15 @@ import com.devopsbuddy.backend.persistence.converters.LocalDateTimeAttributeConv
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * Created by rjeshg on 1/22/17.
+ * Created by tedonema on 10/04/2016.
  */
 @Entity
 public class PasswordResetToken implements Serializable {
-
 
     /** The Serial Version UID for Serializable classes. */
     private static final long serialVersionUID = 1L;
@@ -22,8 +20,7 @@ public class PasswordResetToken implements Serializable {
     /** The application logger */
     private static final Logger LOG = LoggerFactory.getLogger(PasswordResetToken.class);
 
-    private static final int DEFAULT_TOKEN_LENGTH_IN_MINUTES = 120;
-
+    private final static int DEFAULT_TOKEN_LENGTH_IN_MINUTES = 120;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,7 +28,6 @@ public class PasswordResetToken implements Serializable {
 
     @Column(unique = true)
     private String token;
-
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
@@ -41,15 +37,24 @@ public class PasswordResetToken implements Serializable {
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime expiryDate;
 
-
+    /**
+     * Default constructor.
+     */
     public PasswordResetToken() {
 
     }
 
-
+    /**
+     * Full constructor.
+     * @param token The user token. It must not be null.
+     * @param user The user for which the token should be created It must not be null.
+     * @param creationDateTime The date time when this request was created. It must not be null.
+     * @param expirationInMinutes The length, in minutes, for which this token will be valid. If zero, it will be
+     *                            assigned a default value of 120 (2 hours)
+     * @throws IllegalArgumentException If the token, user or creation date time are null
+     */
     public PasswordResetToken(String token, User user, LocalDateTime creationDateTime, int expirationInMinutes) {
-
-        if((null == token) || (null == user) || (null == creationDateTime)) {
+        if ((null == token) || (null == user) || (null == creationDateTime)) {
             throw new IllegalArgumentException("token, user and creation date time can't be null");
         }
         if (expirationInMinutes == 0) {
@@ -59,7 +64,6 @@ public class PasswordResetToken implements Serializable {
         this.token = token;
         this.user = user;
         expiryDate = creationDateTime.plusMinutes(expirationInMinutes);
-
     }
 
     public long getId() {
@@ -102,6 +106,7 @@ public class PasswordResetToken implements Serializable {
         PasswordResetToken that = (PasswordResetToken) o;
 
         return id == that.id;
+
     }
 
     @Override

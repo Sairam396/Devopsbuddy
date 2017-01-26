@@ -10,7 +10,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-
+/**
+ * Created by tedonema on 28/03/2016.
+ */
 @Entity
 public class User implements Serializable, UserDetails {
 
@@ -93,6 +95,7 @@ public class User implements Serializable, UserDetails {
     }
 
 
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -169,7 +172,6 @@ public class User implements Serializable, UserDetails {
         this.enabled = enabled;
     }
 
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -185,11 +187,8 @@ public class User implements Serializable, UserDetails {
         return true;
     }
 
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
         Set<GrantedAuthority> authorities = new HashSet<>();
         userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
         return authorities;

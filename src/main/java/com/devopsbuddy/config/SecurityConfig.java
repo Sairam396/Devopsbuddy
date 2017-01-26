@@ -2,6 +2,7 @@ package com.devopsbuddy.config;
 
 import com.devopsbuddy.backend.service.UserSecurityService;
 import com.devopsbuddy.web.controllers.ForgotMyPasswordController;
+import com.devopsbuddy.web.controllers.SignupController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by rjeshg on 1/21/2017.
+ * Created by tedonema on 26/03/2016.
  */
 @Configuration
 @EnableWebSecurity
@@ -30,13 +31,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private Environment env;
 
     /** The encryption SALT. */
-    private static final String SALT = "asdfgqer;tedveo5tjnfmcmk";
+    private static final String SALT = "fdalkjalk;3jlwf00sfaof";
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
     }
-
 
     /** Public URLs. */
     private static final String[] PUBLIC_MATCHERS = {
@@ -50,8 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/error/**/*",
             "/console/**",
             ForgotMyPasswordController.FORGOT_PASSWORD_URL_MAPPING,
-            ForgotMyPasswordController.CHANGE_PASSWORD_PATH
-
+            ForgotMyPasswordController.CHANGE_PASSWORD_PATH,
+            SignupController.SIGNUP_URL_MAPPING
     };
 
     @Override

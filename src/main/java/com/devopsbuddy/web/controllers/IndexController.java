@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by rjeshg on 1/16/17.
+ * Created by tedonema on 03/03/2016.
  */
 @Controller
-public class indexController {
+public class IndexController {
 
     @RequestMapping("/")
     public String home() {

@@ -4,13 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by rjeshg on 1/18/17.
+ * Created by tedonema on 25/03/2016.
  */
 @Controller
 public class LoginController {
 
     /** The login view name */
-    public static final String LOGIN_VIEW_NAME ="user/login";
+    public static final String LOGIN_VIEW_NAME = "user/login";
 
     @RequestMapping("/login")
     public String login() {

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
 /**
- * Created by rjeshg on 1/16/17.
+ * Created by tedonema on 07/03/2016.
  */
 @Configuration
 public class I18NConfig {
@@ -14,8 +14,9 @@ public class I18NConfig {
     public ReloadableResourceBundleMessageSource messageSource() {
         ReloadableResourceBundleMessageSource resourceBundleMessageSource = new ReloadableResourceBundleMessageSource();
         resourceBundleMessageSource.setBasename("classpath:i18n/messages");
-        // checks for new messages for every 30 mintues
+        // Checks for new messages every 30 minutes
         resourceBundleMessageSource.setCacheSeconds(1800);
         return resourceBundleMessageSource;
     }
+
 }

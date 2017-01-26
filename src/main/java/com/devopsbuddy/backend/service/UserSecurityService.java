@@ -11,11 +11,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by rjeshg on 1/21/17.
+ * Created by tedonema on 31/03/2016.
  */
 @Service
 public class UserSecurityService implements UserDetailsService {
-
 
     /** The application logger */
     private static final Logger LOG = LoggerFactory.getLogger(UserSecurityService.class);
@@ -25,13 +24,11 @@ public class UserSecurityService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
         User user = userRepository.findByUsername(username);
-        if(null == user) {
+        if (null == user) {
             LOG.warn("Username {} not found", username);
-            throw new UsernameNotFoundException("Username " + username + "not found");
+            throw new UsernameNotFoundException("Username " + username + " not found");
         }
-
         return user;
     }
 }

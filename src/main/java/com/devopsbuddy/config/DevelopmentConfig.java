@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * Created by rjeshg on 01/20/2017.
+ * Created by tedonema on 21/03/2016.
  */
 @Configuration
 @Profile("dev")

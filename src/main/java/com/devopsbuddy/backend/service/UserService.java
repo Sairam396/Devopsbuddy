@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Set;
 
 /**
- * Created by rjeshg on 01/21/2017.
+ * Created by tedonema on 30/03/2016.
  */
 @Service
 @Transactional(readOnly = true)
@@ -41,8 +41,8 @@ public class UserService {
     @Transactional
     public User createUser(User user, PlansEnum plansEnum, Set<UserRole> userRoles) {
 
-        String encrptedPassword = passwordEncoder.encode(user.getPassword());
-        user.setPassword(encrptedPassword);
+        String encryptedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encryptedPassword);
 
         Plan plan = new Plan(plansEnum);
         // It makes sure the plans exist in the database
@@ -64,12 +64,30 @@ public class UserService {
 
     }
 
+    /**
+     * Returns a user by username or null if a user could not be found.
+     * @param username The username to be found
+     * @return A user by username or null if a user could not be found.
+     */
+    public User findByUserName(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    /**
+     * Returns a user for the given email or null if a user could not be found.
+     * @param email The email associated to the user to find.
+     * @return a user for the given email or null if a user could not be found.
+     */
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     @Transactional
     public void updateUserPassword(long userId, String password) {
         password = passwordEncoder.encode(password);
         userRepository.updateUserPassword(userId, password);
         LOG.debug("Password updated successfully for user id {} ", userId);
-
     }
+
 
 }

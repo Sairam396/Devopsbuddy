@@ -3,7 +3,7 @@ package com.devopsbuddy.web.domain.frontend;
 import java.io.Serializable;
 
 /**
- * Created by rjeshg on 1/18/17.
+ * Created by tedonema on 20/03/2016.
  */
 public class FeedbackPojo implements Serializable {
 

@@ -9,7 +9,7 @@ import org.springframework.mail.SimpleMailMessage;
 /**
  * Real implementation of an email service.
  *
- * Created by rjeshg on 01/18/2017.
+ * Created by tedonema on 22/03/2016.
  */
 public class SmtpEmailService extends AbstractEmailService {
 
