@@ -102,6 +102,13 @@
 			<version>LATEST</version>
 		</dependency>
 
+		<!-- Stripe dependencies -->
+		<dependency>
+			<groupId>com.stripe</groupId>
+			<artifactId>stripe-java</artifactId>
+			<version>1.40.0</version>
+		</dependency>
+
 		<!-- Test Dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -115,11 +122,13 @@
 			<version>6.0.4.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.22</version>
         </dependency>
+
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-s3</artifactId>

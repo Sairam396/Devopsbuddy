@@ -26,6 +26,7 @@ import java.io.IOException;
 @EntityScan(basePackages = "com.devopsbuddy.backend.persistence.domain.backend")
 @EnableTransactionManagement
 @PropertySource("file:///${user.home}/.devopsbuddy/application-common.properties")
+@PropertySource("file:///${user.home}/.devopsbuddy/stripe.properties")
 public class ApplicationConfig {
 
     @Value("${aws.s3.profile}")
